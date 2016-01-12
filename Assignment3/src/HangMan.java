@@ -21,7 +21,6 @@ import java.util.Scanner;
  * score wins the game. 
  *
  * @author      Kapil Dole
- * @author      Pratik Kulkarni
  */
 
 public class HangMan {
@@ -243,7 +242,7 @@ public class HangMan {
 			System.out.println("Guess the below word, you have 8 chances, best luck!!");
 			// getting random word from the given text file.
 			Random rnd = new Random();
-			int randomNumber = rnd.nextInt(20);
+			int randomNumber = rnd.nextInt(235886);
 			File file = new File("Kapil.txt");
 			BufferedReader fr = new BufferedReader(new FileReader(file));
 			for(int counter=0;counter<randomNumber;counter++) {
@@ -306,6 +305,7 @@ public class HangMan {
 				{	
 					// It returns randomly generated word.
 					String word = randomWord();
+					word = word.toUpperCase();
 					// Displaying dashes instead of word that player has to guess.
 					StringBuffer guessWord = new StringBuffer();
 					for(int dash=0;dash<word.length();dash++) {
@@ -371,11 +371,7 @@ public class HangMan {
 							missCount--;
 							if(missCount<0) {
 								System.out.println("\n \nGame Over. The word was: "+word);
-								/* If word is not guessed by player then deduct
-								 * 5 points from final score.*/ 
-								if(scores[scoreCounter]>=5) {
-									scores[scoreCounter]=scores[scoreCounter]-5;
-								}
+
 								scoreCounter++;
 							}
 							else {
