@@ -244,7 +244,7 @@ public class HangMan {
 			// getting random word from the given text file.
 			Random rnd = new Random();
 			int randomNumber = rnd.nextInt(20);
-			File file = new File("words.txt");
+			File file = new File("Kapil.txt");
 			BufferedReader fr = new BufferedReader(new FileReader(file));
 			for(int counter=0;counter<randomNumber;counter++) {
 				fr.readLine();
